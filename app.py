@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Hello from Azure App Service! (deployed from github) - auto trigger -test again 🚀"
+    return "Hello from Azure App Service! (deployed from github) - auto trigger -test again-- 🚀"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
