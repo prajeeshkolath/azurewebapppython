@@ -1,0 +1,42 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+# More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
+
+name: Build and deploy Python app to Azure Web App - mypythonwebapp10
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_4F5F61AC479C46BBAD36C83F21BF9E3B }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BC681A4CA196428183383D99FEA3E992 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7D927F8381074CAA9108ACEBED27EB78 }}
+
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v3
+        id: deploy-to-webapp
+        with:
+          app-name: 'mypythonwebapp10'
+          slot-name: 'dev'
+      - name: Swap staging to production
+        uses: azure/cli@v1
+        with:
+          inlineScript: |
+            az webapp deployment slot swap \
+              --name mypythonwebapp10 \
+              --resource-group learnfora204 \
+              --slot dev \
+              --target-slot production
+
+          
+
+
