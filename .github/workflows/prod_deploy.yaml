@@ -7,12 +7,15 @@ name: Build and deploy Python app to Azure Web App - mypythonwebapp10
 on:
   push:
     branches:
-      - main
+      - release
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write #This is required for requesting the JWT
+      contents: read #This is required for actions/checkout
     steps:
       - name: Login to Azure
         uses: azure/login@v2
