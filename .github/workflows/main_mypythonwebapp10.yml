@@ -67,6 +67,7 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'mypythonwebapp10'
-          slot-name: 'mypythonwebapp10-dev'
+          slot-name: 'dev'
 
           
+
