@@ -14,7 +14,7 @@ def home():
         # --- Replace these variables with your information ---
     # It's highly recommended to use a .env file for storing sensitive credentials.
     # Replace '<YOUR_CONNECTION_STRING>' with your actual connection string from the Azure portal.
-    CONNECTION_STRING = os.getenv("COSMOS_CONNECTION_STRING")
+    CONNECTION_STRING = os.getenv("AZURE_COSMOS_CONNECTIONSTRING")
     
     DATABASE_NAME = "your_database_name"
     COLLECTION_NAME = "your_collection_name"
