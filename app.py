@@ -10,7 +10,7 @@ def home():
     return "Hello from Azure App Service! (deployed from github) :) 🚀"
 
 @app.route("/testdb")
-    def testdb():
+def testdb():
         # --- Replace these variables with your information ---
     # It's highly recommended to use a .env file for storing sensitive credentials.
     # Replace '<YOUR_CONNECTION_STRING>' with your actual connection string from the Azure portal.
