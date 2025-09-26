@@ -39,6 +39,8 @@ def testdb():
         # The result is a cursor, so iterate over it to print each document.
         for document in collection.find():
             print(document)
+
+        return "success - reading from cosmos"
     
     except pymongo.errors.ConnectionFailure as e:
         print(f"Failed to connect to Cosmos DB: {e}")
