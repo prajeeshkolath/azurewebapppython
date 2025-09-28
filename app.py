@@ -55,7 +55,7 @@ def testdb():
             print("\nConnection to Cosmos DB closed.")
 
 @app.route("/mongodb")
-def testdb():
+def testmongodb():
         # --- Replace these variables with your information ---
     # It's highly recommended to use a .env file for storing sensitive credentials.
     # Replace '<YOUR_CONNECTION_STRING>' with your actual connection string from the Azure portal.
